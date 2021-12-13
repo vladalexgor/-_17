@@ -16,36 +16,22 @@ namespace Задание_17
         {
             Console.WriteLine("Введите ФИО:");
             string fullName1 = Console.ReadLine();
-            Console.WriteLine("Введите номер счета:");
+            Console.WriteLine("Введите номер счета в виде числа:");
             int accountNumber1 = Convert.ToInt32(Console.ReadLine());
             Random random1 = new Random ();
             int accountBalance1 = random1.Next(0,1000000);
             BankAccount<int> bankAccount1 = new BankAccount<int>(accountNumber1, accountBalance1, fullName1);
             bankAccount1.Print();
+            Console.WriteLine();
             Console.WriteLine("Введите ФИО:");
             string fullName2 = Console.ReadLine();
-            Console.WriteLine("Введите номер счета:");
+            Console.WriteLine("Введите номер счета в виде строки:");
             string accountNumber2 = Console.ReadLine();
             Random random2 = new Random();
             int accountBalance2 = random2.Next(0, 1000000);
-            BankAccount<int> bankAccount2 = new BankAccount<int>(accountNumber1, accountBalance1, fullName1);
+            BankAccount<string> bankAccount2 = new BankAccount<string>(accountNumber2, accountBalance2, fullName2);
             bankAccount2.Print();
             Console.ReadKey();
-
-            /*print<int>(12);
-            print<string>("Hello!");
-            Console.ReadKey();
-
-            *//*Apartment<int,int> apartment1 = new Apartment<int,int>();
-            apartment1.Num = 1;
-            int next = apartment1.Num;
-
-            Apartment<string,int> apartment2 = new Apartment<string,int>();
-            apartment2.Num = "01";*//*
-        }
-        static void print<T>(T value)
-        {
-            Console.WriteLine(value);*/
         }
     }
     class BankAccount<T>
@@ -64,10 +50,4 @@ namespace Задание_17
             Console.WriteLine("Информация по счету:\nВладелец: {0}\nНомер счета: {1}\nНа вашем счету: {2} $", FullName, AccountNumber, AccountBalance);
         }
     }
-
-    /*class Apartment<T,U>
-    {
-        public U Level { get; set; }
-        public T Num { get; set; }
-    }*/
 }
